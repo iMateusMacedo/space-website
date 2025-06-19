@@ -1,7 +1,7 @@
-export default function Home() {
+export default function Technology() {
   return (
    <section>
-    
+
    </section>
   );
 }
