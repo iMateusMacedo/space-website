@@ -1,7 +1,7 @@
 export default function Destination() {
   return (
-   <section>
+    <section>
 
-   </section>
+    </section>
   );
 }

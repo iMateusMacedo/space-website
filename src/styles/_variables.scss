@@ -1,0 +1,34 @@
+/* COLORS */
+
+$blue900: #0B0D17;
+$blue300: #D0D6F9;
+$white: #FFFFFF;
+
+/* TYPOGRAPHY */
+
+$text-presets: (
+    1: (--font-bellefair, 144px, 1.719, 0),
+    2: (--font-bellefair, 100px, 1.146, 0),
+    3: (--font-bellefair, 56px, .642, 0),
+    4: (--font-bellefair, 32px, .367, 0),
+    5: (--font-barlow-condensed, 28px, .336, 4px),
+    6: (--font-bellefair, 28px, .321, 0),
+    7: (--font-barlow-condensed, 14px, .168, 2px),
+    8: (--font-barlow-condensed, 16px, .192, 2px),
+    9: (--font-barlow, 18px, .180, 0),
+);
+
+@mixin textPreset($preset-id) {
+    $preset: map-get($text-presets, $preset-id);
+
+    @if $preset !=null {
+        font-family: var(nth($preset, 1)), serif;
+        font-size: nth($preset, 2);
+        line-height: nth($preset, 3);
+        letter-spacing: nth($preset, 4);
+    }
+
+    @else {
+        @warn "Preset `#{$preset-id}` não encontrado!";
+    }
+}
