@@ -1,0 +1,10 @@
+@use "@/styles/variables" as *;
+
+.display-button {
+    background-color: $white;
+    border-radius: 50%;
+    height: 17rem;
+    width: 17rem;
+    @include textPreset(4, $blue900);
+    text-transform: uppercase;
+}

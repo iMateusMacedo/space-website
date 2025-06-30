@@ -7,18 +7,18 @@ $white: #FFFFFF;
 /* TYPOGRAPHY */
 
 $text-presets: (
-    1: (--font-bellefair, 144px, 1.719, 0),
-    2: (--font-bellefair, 100px, 1.146, 0),
-    3: (--font-bellefair, 56px, .642, 0),
-    4: (--font-bellefair, 32px, .367, 0),
-    5: (--font-barlow-condensed, 28px, .336, 4px),
-    6: (--font-bellefair, 28px, .321, 0),
-    7: (--font-barlow-condensed, 14px, .168, 2px),
-    8: (--font-barlow-condensed, 16px, .192, 2px),
-    9: (--font-barlow, 18px, .180, 0),
+    1: (--font-bellefair, 144px, 100%, 0),
+    2: (--font-bellefair, 100px, 100%, 0),
+    3: (--font-bellefair, 56px, 100%, 0),
+    4: (--font-bellefair, 32px, 100%, 0),
+    5: (--font-barlow-condensed, 28px, 100%, 4px),
+    6: (--font-bellefair, 28px, 100%, 0),
+    7: (--font-barlow-condensed, 14px, 100%, 2px),
+    8: (--font-barlow-condensed, 16px, 100%, 2px),
+    9: (--font-barlow, 18px, 180%, 0),
 );
 
-@mixin textPreset($preset-id) {
+@mixin textPreset($preset-id, $color: $white) {
     $preset: map-get($text-presets, $preset-id);
 
     @if $preset !=null {
@@ -26,6 +26,7 @@ $text-presets: (
         font-size: nth($preset, 2);
         line-height: nth($preset, 3);
         letter-spacing: nth($preset, 4);
+        color: $color;
     }
 
     @else {

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { Bellefair, Barlow, Barlow_Condensed } from "next/font/google";
 
+import Navigation from "@/components/navigation";
+
 export const metadata: Metadata = {
   title: "Space Website",
   description: "",
@@ -23,6 +25,7 @@ export default function RootLayout({
       <body
         className="antialias"
       >
+        <Navigation />
         {children}
       </body>
     </html>
